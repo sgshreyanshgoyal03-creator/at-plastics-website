@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <img src="/Logo Image/logo.png" alt="A.T. Plastics Industry Logo" className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,0,0,0.1)]" />
+          <img src={`${import.meta.env.BASE_URL}Logo Image/logo.png`} alt="A.T. Plastics Industry Logo" className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,0,0,0.1)]" />
           <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-primary">A.T. Plastics Industry</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">

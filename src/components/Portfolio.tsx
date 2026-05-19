@@ -10,7 +10,7 @@ const Portfolio: React.FC = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
-  const images = Array.from({ length: 9 }, (_, i) => `/Product Images/${i + 1}.png`);
+  const images = Array.from({ length: 9 }, (_, i) => `${import.meta.env.BASE_URL}Product Images/${i + 1}.png`);
 
   return (
     <section ref={targetRef} id="portfolio" className="relative h-[300vh] bg-transparent">
