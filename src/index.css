@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  }
+  .glass-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .glass-button {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    transition: background-color 200ms ease;
+  }
+  .glass-button:hover {
+    background-color: #e2e8f0;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for clean horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Add some global variables for our colors since tailwind v4 might need theme injection */
+@theme {
+  --color-background: #f8fafc;
+  --color-primary: #0284c7;
+  --color-accent: #4f46e5;
+}
