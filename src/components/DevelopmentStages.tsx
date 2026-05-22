@@ -29,10 +29,10 @@ const DevelopmentStages: React.FC = () => {
   const lineHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="process" className="py-24 px-6 relative z-10">
+    <section id="process" className="py-16 md:py-24 px-4 md:px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">Product Development <span className="text-primary">Workflow</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Product Development <span className="text-primary">Workflow</span></h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             A systematic, precision-driven approach from initial concept to high-volume manufacturing.
           </p>
@@ -48,14 +48,14 @@ const DevelopmentStages: React.FC = () => {
             className="hidden lg:block absolute left-1/2 top-0 w-[2px] bg-primary -translate-x-1/2 origin-top"
           ></motion.div>
 
-          <div className="space-y-24">
+          <div className="space-y-12 md:space-y-24">
             {stages.map((stage, index) => {
               const isEven = index % 2 === 0;
               const Icon = stage.icon;
               
               // Calculate the exact progress threshold for this stage
               // 5 stages = thresholds at 0.0, 0.25, 0.5, 0.75, 1.0
-              const threshold = index / (stages.length - 1);
+              const threshold = (index / (stages.length - 1)) * 0.85;
               
               // The node/card lights up when smoothProgress crosses its threshold
               // We give it a small window (e.g. threshold - 0.1 to threshold) to fade in
@@ -76,8 +76,8 @@ const DevelopmentStages: React.FC = () => {
                     style={{ opacity, scale, x }}
                     className="w-full lg:w-5/12"
                   >
-                    <div className="glass-card p-8 rounded-3xl relative overflow-hidden group hover:border-primary/40 transition-colors">
-                      <div className="absolute top-0 right-0 text-8xl font-black text-slate-900/5 -translate-y-4 translate-x-4">
+                    <div className="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:border-primary/40 transition-colors">
+                      <div className="absolute top-0 right-0 text-6xl md:text-8xl font-black text-slate-900/5 -translate-y-4 translate-x-4">
                         {stage.id}
                       </div>
                       

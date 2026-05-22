@@ -16,7 +16,7 @@ const App: React.FC = () => {
       </div>
 
       {/* Main Content Overlay */}
-      <div className="relative z-10 w-full overflow-clip">
+      <div className="relative z-10 w-full overflow-x-hidden">
         <Navbar />
         <main>
           <Hero />

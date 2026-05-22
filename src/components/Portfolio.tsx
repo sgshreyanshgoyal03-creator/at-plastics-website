@@ -1,38 +1,27 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Portfolio: React.FC = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
-
   const images = Array.from({ length: 9 }, (_, i) => `${import.meta.env.BASE_URL}Product Images/${i + 1}.png`);
 
   return (
-    <section ref={targetRef} id="portfolio" className="relative h-[300vh] bg-transparent">
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center pt-20">
+    <section id="portfolio" className="relative py-16 md:py-24 px-4 md:px-6 bg-transparent">
+      <div className="flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 px-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">Our <span className="text-accent">Portfolio</span></h2>
-          <p className="text-slate-600 max-w-xl mx-auto text-lg">
-            Scroll down to explore our premium precision parts.
-          </p>
         </motion.div>
 
-        <div className="w-full flex justify-start items-center">
-          <motion.div style={{ x }} className="flex gap-8 px-8">
+        <div className="w-full">
+          <div className="flex gap-4 sm:gap-6 md:gap-8 px-4 md:px-8 pb-12 overflow-x-auto snap-x snap-mandatory no-scrollbar">
             {images.map((src, index) => (
               <div
                 key={index}
-                className="group relative h-[400px] w-[300px] sm:h-[500px] sm:w-[400px] shrink-0 overflow-hidden rounded-3xl glass-card p-4 transition-transform duration-500 hover:scale-[1.02]"
+                className="group relative h-[360px] w-[280px] sm:h-[450px] sm:w-[350px] md:h-[500px] md:w-[400px] shrink-0 overflow-hidden rounded-3xl glass-card p-4 transition-transform duration-500 hover:scale-[1.02] snap-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <img
@@ -46,7 +35,7 @@ const Portfolio: React.FC = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

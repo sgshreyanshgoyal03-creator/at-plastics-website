@@ -4,7 +4,7 @@ import { Factory, PenTool, CheckCircle2 } from 'lucide-react';
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 px-6 relative z-10">
+    <section id="services" className="py-16 md:py-24 px-4 md:px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -19,13 +19,13 @@ const Services: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-card p-8 rounded-3xl group transition-colors duration-500 relative overflow-hidden"
+            className="glass-card p-6 md:p-8 rounded-3xl group transition-colors duration-500 relative overflow-hidden"
           >
             <Factory className="w-12 h-12 text-primary mb-6" />
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Injection Plastic Moulding</h3>
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="glass-card p-8 rounded-3xl group transition-colors duration-500 relative overflow-hidden"
+            className="glass-card p-6 md:p-8 rounded-3xl group transition-colors duration-500 relative overflow-hidden"
           >
             <PenTool className="w-12 h-12 text-accent mb-6" />
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Product Development</h3>
