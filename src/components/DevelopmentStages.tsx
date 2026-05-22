@@ -77,7 +77,7 @@ const DevelopmentStages: React.FC = () => {
                     className="w-full lg:w-5/12"
                   >
                     <div className="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:border-primary/40 transition-colors">
-                      <div className="absolute top-0 right-0 text-6xl md:text-8xl font-black text-slate-900/5 -translate-y-4 translate-x-4">
+                      <div className="absolute top-2 right-2 md:top-0 md:right-0 text-7xl md:text-8xl font-black text-slate-900/10 md:text-slate-900/5 md:-translate-y-4 md:translate-x-4">
                         {stage.id}
                       </div>
                       
